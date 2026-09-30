@@ -1,0 +1,33 @@
+{
+  "name": "ai-ecommerce-testing-dashboard",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -n api,web -c blue,magenta \"tsx watch --disable-warning=ExperimentalWarning backend/server.ts\" \"vite --config frontend/vite.config.ts\"",
+    "build": "vite build --config frontend/vite.config.ts",
+    "start": "npm run build && tsx --disable-warning=ExperimentalWarning backend/server.ts",
+    "serve": "tsx --disable-warning=ExperimentalWarning backend/server.ts",
+    "typecheck": "tsc --noEmit -p backend/tsconfig.json && tsc --noEmit -p frontend/tsconfig.json"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.6.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.1",
+    "concurrently": "^10.0.5",
+    "daisyui": "^5.7.43",
+    "tailwindcss": "^4.3.3",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.0"
+  }
+}

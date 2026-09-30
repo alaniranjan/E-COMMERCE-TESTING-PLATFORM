@@ -1,0 +1,7 @@
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: corporate --default, business --prefersdark;
+}
+
+/* Keep numbers aligned in stats and tables. */
+.stat-value, td.num { font-variant-numeric: tabular-nums; }
