@@ -1,0 +1,35 @@
+{
+  "_comment": "Labelled Playwright failures for measuring AI classification accuracy. Expected labels use the §16 categories.",
+  "cases": [
+    {
+      "id": "EVAL-001",
+      "expected": "APPLICATION_DEFECT",
+      "failure": "Test: Checkout > TC23 Order completion\nStep: click Finish on the order overview, then expect the confirmation header.\nError: expect(locator).toHaveText(expected) failed\nLocator: getByTestId('complete-header')\nExpected: \"Thank you for your order!\"\nReceived: element not found. Page title is still \"Checkout: Overview\" and the Finish button is visible and enabled. No console errors. The same test passed yesterday on the same test code."
+    },
+    {
+      "id": "EVAL-002",
+      "expected": "TEST_SCRIPT_DEFECT",
+      "failure": "Test: Cart > TC13 Add one product\nError: TimeoutError: locator.click: Timeout 10000ms exceeded.\nCall log: waiting for getByTestId('chekout')\nThe cart page rendered normally and contains a button with data-test=\"checkout\". The test file was edited in the last commit."
+    },
+    {
+      "id": "EVAL-003",
+      "expected": "ENVIRONMENT_FAILURE",
+      "failure": "Test: Authentication > TC01 Valid login [webkit]\nError: browserType.launch: Host system is missing dependencies to run browsers. Missing libraries: libgstcodecparsers-1.0.so.0, libflite.so.1, libavif.so.13\nThe same test passes on chromium and firefox on this machine."
+    },
+    {
+      "id": "EVAL-004",
+      "expected": "NETWORK_FAILURE",
+      "failure": "Test: API: products > GET /products returns the catalog\nError: apiRequestContext.fetch: connect ECONNREFUSED 127.0.0.1:3001\nNo HTTP response was received. The API server process is not listening on that port."
+    },
+    {
+      "id": "EVAL-005",
+      "expected": "TEST_DATA_DEFECT",
+      "failure": "Test: Product > TC12 Product price validation\nError: listing price of Sauce Labs Backpack: expect(received).toBe(expected)\nExpected: 39.99\nReceived: 29.99\nThe expected value comes from test-data/staging/products.json, which was edited yesterday. The product catalog specification and production both list the Backpack at $29.99."
+    },
+    {
+      "id": "EVAL-006",
+      "expected": "AUTHENTICATION_FAILURE",
+      "failure": "Test: API: cart > Add an item\nError: Expected HTTP 201, got 401\nResponse body: {\"error\":{\"code\":\"UNAUTHORIZED\",\"message\":\"Invalid or expired token\"}}\nThe token was issued 2 hours ago; tokens expire after 1 hour. Login itself succeeded."
+    }
+  ]
+}
