@@ -1,0 +1,32 @@
+{
+  "newProduct": {
+    "name": "QA Test Mug",
+    "description": "Created by API automation",
+    "price": 12.5,
+    "category": "accessories",
+    "stock": 25
+  },
+  "boundaries": {
+    "price": { "min": 0.01, "max": 10000, "belowMin": 0, "aboveMax": 10000.01, "tooManyDecimals": 1.999 },
+    "quantity": { "min": 1, "max": 10, "belowMin": 0, "aboveMax": 11 },
+    "pageSize": { "min": 1, "max": 50, "belowMin": 0, "aboveMax": 51 },
+    "nameMaxLength": 100
+  },
+  "shipping": {
+    "valid": { "firstName": "Test", "lastName": "Customer", "postalCode": "560001" }
+  },
+  "invalidShipping": {
+    "missingFirstName": { "lastName": "Customer", "postalCode": "560001" },
+    "missingLastName": { "firstName": "Test", "postalCode": "560001" },
+    "missingPostalCode": { "firstName": "Test", "lastName": "Customer" },
+    "whitespaceFirstName": { "firstName": "   ", "lastName": "Customer", "postalCode": "560001" },
+    "invalidPostalCode": { "firstName": "Test", "lastName": "Customer", "postalCode": "@@" }
+  },
+  "seededProducts": {
+    "backpack": { "id": 1, "name": "Sauce Labs Backpack", "price": 29.99 },
+    "bikeLight": { "id": 2, "name": "Sauce Labs Bike Light", "price": 9.99 },
+    "fleeceJacket": { "id": 4, "name": "Sauce Labs Fleece Jacket", "price": 49.99 },
+    "lowStock": { "id": 6, "name": "Test.allTheThings() T-Shirt (Red)", "stock": 3 }
+  },
+  "taxRate": 0.08
+}
