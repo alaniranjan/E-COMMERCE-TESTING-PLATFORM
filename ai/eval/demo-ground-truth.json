@@ -1,0 +1,7 @@
+{
+  "_comment": "Expected analysis for tests/ai-demo. Kept out of the test source so it never reaches the model.",
+  "AI-DEMO-001": { "classification": "TEST_DATA_DEFECT", "rootCause": "Expected price 39.99 in test-data/ai-demo.json is wrong; the catalog price is 29.99." },
+  "AI-DEMO-002": { "classification": "TEST_SCRIPT_DEFECT", "rootCause": "The test does not click Finish before expecting the confirmation." },
+  "AI-DEMO-003": { "classification": "APPLICATION_DEFECT", "rootCause": "The order service returned HTTP 500 (simulated outage)." },
+  "AI-DEMO-004": { "classification": "TEST_SCRIPT_DEFECT", "rootCause": "Selector typo: getByTestId('chekout') instead of 'checkout'." }
+}

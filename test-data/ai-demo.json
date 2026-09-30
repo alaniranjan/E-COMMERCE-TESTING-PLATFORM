@@ -1,0 +1,4 @@
+{
+  "_comment": "Deliberately WRONG values used only by tests/ai-demo to create controlled failures for the AI failure analyzer.",
+  "backpackExpectedPrice": 39.99
+}
