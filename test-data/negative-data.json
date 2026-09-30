@@ -1,0 +1,55 @@
+{
+  "login": {
+    "invalidUsername": {
+      "username": "unknown_user",
+      "useValidPassword": true,
+      "expectedError": "Epic sadface: Username and password do not match any user in this service"
+    },
+    "invalidPassword": {
+      "username": "standard_user",
+      "password": "wrong_password",
+      "expectedError": "Epic sadface: Username and password do not match any user in this service"
+    },
+    "emptyUsername": {
+      "username": "",
+      "useValidPassword": true,
+      "expectedError": "Epic sadface: Username is required"
+    },
+    "emptyPassword": {
+      "username": "standard_user",
+      "password": "",
+      "expectedError": "Epic sadface: Password is required"
+    },
+    "lockedOut": {
+      "username": "locked_out_user",
+      "useValidPassword": true,
+      "expectedError": "Epic sadface: Sorry, this user has been locked out."
+    }
+  },
+  "checkout": {
+    "missingFirstName": {
+      "customer": { "firstName": "", "lastName": "Customer", "postalCode": "560001" },
+      "expectedError": "Error: First Name is required"
+    },
+    "missingLastName": {
+      "customer": { "firstName": "Test", "lastName": "", "postalCode": "560001" },
+      "expectedError": "Error: Last Name is required"
+    },
+    "missingPostalCode": {
+      "customer": { "firstName": "Test", "lastName": "Customer", "postalCode": "" },
+      "expectedError": "Error: Postal Code is required"
+    },
+    "allFieldsEmpty": {
+      "customer": { "firstName": "", "lastName": "", "postalCode": "" },
+      "expectedError": "Error: First Name is required"
+    },
+    "whitespaceOnly": {
+      "customer": { "firstName": "   ", "lastName": "   ", "postalCode": "   " },
+      "expectedError": "Error: First Name is required"
+    }
+  },
+  "product": {
+    "nonExistentId": 999,
+    "notFoundName": "ITEM NOT FOUND"
+  }
+}

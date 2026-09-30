@@ -1,0 +1,4 @@
+{
+  "validCustomer": { "firstName": "Test", "lastName": "Customer", "postalCode": "560001" },
+  "taxRate": 0.08
+}
