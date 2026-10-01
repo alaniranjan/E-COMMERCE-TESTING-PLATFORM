@@ -1,0 +1,13 @@
+# The deployable part of this repo is the dashboard UI (dashboard/frontend).
+# Test execution (Playwright + SQLite) only works when the dashboard runs locally;
+# on Netlify the /api routes are served by a read-only function.
+[build]
+  command = "npm --prefix dashboard ci && npm --prefix dashboard run build"
+  publish = "dashboard/frontend/dist"
+  functions = "netlify/functions"
+
+# Single-page app: client-side routes (/history, /run, /runs/:id) fall back to index.html.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
